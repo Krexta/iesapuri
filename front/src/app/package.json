@@ -1,0 +1,11 @@
+{
+  "name": "@app",
+  "private": true,
+  "scripts": {
+    "cc": "rm -rf node_modules/.cache",
+    "type-check": "tsc --noEmit",
+    "type-chech-watch": "npm run type-check -- --watch",
+    "vitest": "NODE_ENV=test vitest run",
+    "vitest-watch": "NODE_ENV=test vitest watch"
+  }
+}
