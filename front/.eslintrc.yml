@@ -1,0 +1,147 @@
+---
+root: true
+extends:
+  - eslint:recommended
+  # - plugin:@typescript-eslint/eslint-recommended
+  # - plugin:@typescript-eslint/recommended
+  - plugin:testing-library/react
+  - plugin:storybook/recommended
+  - plugin:react/recommended
+  - plugin:react-hooks/recommended
+  - '@remix-run/eslint-config'
+
+env:
+  browser: true
+  node: true
+  es6: true
+
+plugins:
+  - simple-import-sort
+  - import
+  - react
+  - jsx-a11y
+  - prettier
+  # - "@typescript-eslint"
+  - import-access
+  - testing-library
+
+ignorePatterns:
+  - packages/**/*.module.scss.d.ts
+
+parser: "@typescript-eslint/parser"
+parserOptions:
+  sourceType: "module"
+
+globals:
+  __DEV__: true
+  __SERVER__: true
+
+rules:
+  valid-jsdoc: 1
+
+  semi:
+  - error
+  - never
+  - beforeStatementContinuationChars: never
+  semi-spacing:
+  - error
+  - after: true
+  semi-style:
+  - error
+  - first
+  object-shorthand: 0
+  no-shadow: 0
+  class-methods-use-this: 0
+  no-console: 0
+  no-unresolved: 0
+  no-else-return: 0
+  arrow-body-style: 0
+  no-new: 0
+  no-param-reassign: 0
+  consistent-return: 0
+  no-return-assign: 0
+  no-nested-ternary: 0
+  arrow-parens: 0
+  global-require: 1
+  object-curly-newline: 0
+  function-paren-newline: 0
+  no-await-in-loop: 1
+  no-undef: 0
+  no-unused-vars: 0
+  no-redeclare: 1
+  operator-linebreak: 1
+  prefer-spread: 2
+  lines-between-class-members: 0
+  camelcase: 0
+  no-use-before-define: 1
+  no-underscore-dangle: 1
+
+  "@typescript-eslint/no-var-requires": 1
+  "@typescript-eslint/indent": 0
+  "@typescript-eslint/no-var-require": 0
+  "@typescript-eslint/explicit-function-return-type": 0
+  no-restricted-syntax:
+    - error
+    - selector: TSEnumDeclaration
+      message: Don't declare enums
+
+  import/no-named-as-default: 0
+  import/no-named-as-default-member: 0
+  import/extensions: 0
+  import/no-extraneous-dependencies: 0
+  import/no-unresolved: 0
+  import/prefer-default-export: 0
+  import/first: 2
+  import/newline-after-import: 2
+  import/no-duplicates: 2
+  simple-import-sort/exports: 2
+  simple-import-sort/imports:
+    - error
+    - groups:
+      - ["^react", "^@?\\w"]
+      - ["^\\u0000"]
+      - ["^(@pocket-sommelier/*)(/.*|$)"]
+      - ["^(@/*)(/.*|$)"]
+      - ["^\\.\\.(?!/?$)", "^\\.\\./?$"]
+      - ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+      - ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+      - ["^.+\\.s?css$"]
+
+  import-access/jsdoc: 1
+  import/no-cycle: 1
+
+  react/no-string-refs: 0
+  react/prefer-stateless-function: 0
+  react/jsx-wrap-multilines: 0
+  react/sort-comp: 0
+  react/jsx-closing-bracket-location: 1
+  react/jsx-filename-extension: 0
+  react/prop-types: 0
+  react/button-has-type: 1
+  react/react-in-jsx-scope: 0
+  react/require-default-props: 0
+  react/no-unused-prop-types: 1
+  react/jsx-props-no-spreading: 0
+  react/destructuring-assignment: 1
+  react/function-component-definition:
+    - 2
+    - namedComponents: arrow-function
+  react/jsx-sort-props: 1
+
+  react-hooks/rules-of-hooks: 1
+
+  jsx-a11y/no-static-element-interactions: 0
+  jsx-a11y/img-redundant-alt: 1
+  jsx-a11y/anchor-is-valid: 1
+  jsx-a11y/click-events-have-key-events: 1
+  jsx-a11y/no-noninteractive-element-interactions: 1
+  jsx-a11y/alt-text: 1
+  jsx-a11y/label-has-for: 0
+  jsx-a11y/anchor-has-content: 0
+  jsx-filename-extension: 0
+  jsx-quotes: 0
+
+  testing-library/no-container: 1
+  testing-library/prefer-screen-queries: 1
+  testing-library/no-node-access: 1
+
