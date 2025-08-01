@@ -5,7 +5,7 @@ import { within } from '@storybook/test'
 import { Login } from './Login'
 
 export default {
-  title: 'template/Login',
+  title: 'app/template/Login',
   component: Login,
 } as Meta<typeof Login>
 type Story = StoryObj<typeof Login>

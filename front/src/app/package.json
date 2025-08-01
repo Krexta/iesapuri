@@ -1,11 +1,29 @@
 {
   "name": "@app",
   "private": true,
+ "type": "module",
   "scripts": {
+    "dev": "run-p dev:serve dev:path hcm:watch hcm:watch:module",
+    "dev:serve": "NODE_ENV=development APP_ENV=development remix vite:dev --port 5000 --host 0.0.0.0",
+    "dev:path": "remix-routes -w",
+    "hcm:watch": "hcm 'src/**/*.module.{css,scss,less}' --watch",
+    "hcm:watch:module": "hcm '../modules/src/**/*.module.{css,scss,less}' --watch",
     "cc": "rm -rf node_modules/.cache",
+    "test-storybook": "NODE_ENV=local test-storybook --url http://localhost:5102",
+    "build-storybook": "NODE_ENV=local storybook build",
+    "story": "storybook dev -p 5100",
     "type-check": "tsc --noEmit",
-    "type-chech-watch": "npm run type-check -- --watch",
+    "type-check-watch": "npm run type-check -- --watch",
     "vitest": "NODE_ENV=test vitest run",
     "vitest-watch": "NODE_ENV=test vitest watch"
+  },
+  "dependencies": {
+    "@remix-run/css-bundle": "*",
+    "@remix-run/dev": "*",
+    "@remix-run/node": "*",
+    "@remix-run/react": "*",
+    "@remix-run/serve": "*",
+    "@modules": "*",
+    "isbot": "^4"
   }
 }

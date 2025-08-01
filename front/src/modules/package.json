@@ -2,11 +2,15 @@
   "name": "@modules",
   "private": true,
   "scripts": {
-    "type-chech-watch": "npm run type-check -- --watch",
+    "type-check": "tsc --noEmit",
+    "type-check-watch": "npm run type-check -- --watch",
     "vitest": "NODE_ENV=test vitest run",
     "vitest-watch": "NODE_ENV=test vitest watch",
     "test-storybook": "NODE_ENV=local test-storybook --url http://localhost:5102",
     "build-storybook": "NODE_ENV=local storybook build",
     "story": "storybook dev -p 5100"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2"
   }
 }
