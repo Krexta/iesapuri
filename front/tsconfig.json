@@ -7,23 +7,29 @@
     "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitThis": true,
     "noImplicitReturns": true,
-    "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true,
     "inlineSources": true,
-    "incremental": false,
+    "incremental": true,
     "removeComments": false,
     "allowJs": true,
+    "checkJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "noEmit": false,
+    "noEmit": true,
     "moduleResolution": "node",
-    "module": "ESNext",
-    "target": "ESNext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "module": "esnext",
+    "target": "esnext",
     "jsx": "react-jsx",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "plugins": [
       {
         "name": "eslint-plugin-import-access",
@@ -37,10 +43,6 @@
   "exclude": [
     "dist/*",
     "dist",
-    "**/openapi/**/*",
-    "**/openapi/model",
-    "openapi/**/*",
-    "src/openapi/**/*",
     "node_modules/*",
     "node_modules"
   ]
